@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iwF-A9-haW">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <rect key="frame" x="10" y="54" width="394" height="741.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FB3-XR-GFL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,18 +27,41 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-bC-oRW">
+                                <rect key="frame" x="10" y="805.5" width="352" height="66.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-ZK-pf2">
+                                <rect key="frame" x="372" y="805.5" width="32" height="66.5"/>
+                                <state key="normal" title="Sent"/>
+                                <connections>
+                                    <action selector="sentButtonTapped:" destination="v5b-dq-Yo4" eventType="touchUpInside" id="0p9-YE-Rdb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hfU-ep-0BL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hfU-ep-0BL" firstAttribute="trailing" secondItem="iwF-A9-haW" secondAttribute="trailing" constant="10" id="3Ne-2j-boq"/>
                             <constraint firstItem="iwF-A9-haW" firstAttribute="leading" secondItem="hfU-ep-0BL" secondAttribute="leading" constant="10" id="5kn-4L-2c1"/>
+                            <constraint firstItem="Zlp-bC-oRW" firstAttribute="leading" secondItem="hfU-ep-0BL" secondAttribute="leading" constant="10" id="7wZ-30-kpK"/>
+                            <constraint firstItem="SnM-ZK-pf2" firstAttribute="leading" secondItem="Zlp-bC-oRW" secondAttribute="trailing" constant="10" id="AFA-wX-HZZ"/>
                             <constraint firstItem="iwF-A9-haW" firstAttribute="top" secondItem="hfU-ep-0BL" secondAttribute="top" constant="10" id="BFe-M8-SNz"/>
-                            <constraint firstItem="hfU-ep-0BL" firstAttribute="bottom" secondItem="iwF-A9-haW" secondAttribute="bottom" constant="10" id="RDh-f9-ARn"/>
+                            <constraint firstItem="hfU-ep-0BL" firstAttribute="trailing" secondItem="SnM-ZK-pf2" secondAttribute="trailing" constant="10" id="CkM-uM-81F"/>
+                            <constraint firstItem="SnM-ZK-pf2" firstAttribute="bottom" secondItem="Zlp-bC-oRW" secondAttribute="bottom" id="E3Q-Qn-BsY"/>
+                            <constraint firstItem="SnM-ZK-pf2" firstAttribute="height" secondItem="Zlp-bC-oRW" secondAttribute="height" id="c0s-dH-TEF"/>
+                            <constraint firstItem="Zlp-bC-oRW" firstAttribute="bottom" secondItem="hfU-ep-0BL" secondAttribute="bottom" constant="10" id="pSj-eb-3f8"/>
+                            <constraint firstItem="Zlp-bC-oRW" firstAttribute="top" secondItem="iwF-A9-haW" secondAttribute="bottom" constant="10" id="rHl-ww-Py3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputTextView" destination="Zlp-bC-oRW" id="m1P-7W-RdJ"/>
                         <outlet property="keyWorldCollectionView" destination="iwF-A9-haW" id="JfJ-wJ-VZn"/>
+                        <outlet property="sentButton" destination="SnM-ZK-pf2" id="Pa7-ef-AST"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOj-f9-oPH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,6 +70,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

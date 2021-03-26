@@ -31,15 +31,17 @@ class HomeViewController: UIViewController {
         
         let alert = UIAlertController(title: "Choose an option", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Automation", style: .default, handler: {_ in
+            vc.isAutomaticFill = true
             self.navigationController?.pushViewController(vc, animated: true)
         }))
-        alert.addAction(UIAlertAction(title: "Input from key board", style: .default, handler: {_ in
+        alert.addAction(UIAlertAction(title: "Input from keyboard", style: .default, handler: {_ in
             vc.listOfTag.removeAll()
+            vc.isAutomaticFill = false
             self.navigationController?.pushViewController(vc, animated: true)
         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
     }
    
 }

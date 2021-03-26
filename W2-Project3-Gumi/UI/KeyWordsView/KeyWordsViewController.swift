@@ -11,9 +11,12 @@ class KeyWordsViewController: UIViewController {
     
     //Outlet
     @IBOutlet weak var keyWorldCollectionView: UICollectionView!
+    @IBOutlet weak var inputTextView: UITextView!
+    @IBOutlet weak var sentButton: UIButton!
     
     //Data
     var listOfTag : [String] = ["CARTOON", "AMNINAL", "SOCIAL", "NEWS", "MEDIA", "SITCOM", "TV SHOW", "GAME SHOW", "REALISTIC SHOW", "COMEDY", "FAMILY", "KIDS", "K-POP", "MUSIC VIDEO", "TRENDING"]
+    var isAutomaticFill = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,15 @@ class KeyWordsViewController: UIViewController {
         let customFlowLayout = CustomFlowLayout()
         customFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         keyWorldCollectionView.collectionViewLayout = customFlowLayout
+        
+        inputTextView.isHidden = isAutomaticFill
+        sentButton.isHidden = isAutomaticFill
+    }
+    
+    @IBAction func sentButtonTapped(_ sender: Any) {
+        listOfTag.append(inputTextView.text)
+        keyWorldCollectionView.reloadData()
+        inputTextView.text = ""
     }
 }
 
@@ -55,17 +67,4 @@ extension KeyWordsViewController: UICollectionViewDelegate, UICollectionViewData
             cell.toggleSelected()
         }
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? KeyWordCollectionViewCell {
-////            cell.contentView.backgroundColor = .red
-//            cell.tapped()
-//        }
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? KeyWordCollectionViewCell {
-//            cell.tapped()
-//        }
-//    }
 }
