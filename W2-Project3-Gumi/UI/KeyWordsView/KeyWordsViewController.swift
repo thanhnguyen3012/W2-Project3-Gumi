@@ -33,14 +33,20 @@ class KeyWordsViewController: UIViewController {
         let customFlowLayout = CustomFlowLayout()
         customFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         keyWorldCollectionView.collectionViewLayout = customFlowLayout
+        keyWorldCollectionView.sizeToFit()
         
+        
+        //Set up for    
         inputTextView.isHidden = isAutomaticFill
         sentButton.isHidden = isAutomaticFill
+        
+        inputTextView.layer.borderColor = UIColor.systemYellow.cgColor
     }
     
     @IBAction func sentButtonTapped(_ sender: Any) {
         listOfTag.append(inputTextView.text)
-        keyWorldCollectionView.reloadData()
+        let indexPath = IndexPath(row: listOfTag.count-1, section: 0)
+        keyWorldCollectionView.insertItems(at: [indexPath])
         inputTextView.text = ""
     }
 }

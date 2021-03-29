@@ -23,23 +23,32 @@ class VideoTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if video?.url != nil {
+            getVideo(forUrl: (video?.url)!)
+        } else {
+            print("nil")
+        }
+    }
+    
     func bindData(video: Video) {
         self.video = video
-        if video.url != nil {
-            getThumbnailImage(forUrl: video.url!)
-        }
         tagLabel.text = video.tag
         titleLabel.text = "▶️ \(video.title)"
     }
     
-    func getThumbnailImage(forUrl url: URL) {
-        let asset: AVAsset = AVAsset(url: url) // represent for Video from URL
-        
+    func getVideo(forUrl url: URL) {
+        let asset = AVAsset(url: url)
         let playerItem = AVPlayerItem(asset: asset)
         player = AVPlayer(playerItem: playerItem)
         
         let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.videoView.bounds // bounds of the view in which AVPlayer should be displayed
+        playerLayer.frame = self.videoView.bounds //bounds of the view in which AVPlayer should be displayed
         playerLayer.videoGravity = .resizeAspect
         
         self.videoView.layer.addSublayer(playerLayer)

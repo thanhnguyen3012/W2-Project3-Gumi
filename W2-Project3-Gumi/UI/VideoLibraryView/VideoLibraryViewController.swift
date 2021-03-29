@@ -17,7 +17,16 @@ class VideoLibraryViewController: UIViewController {
                                 Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", tag: "CARTOON", title: "Big buck bunny"),
                                 Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", tag: "ANIMAL", title: "Elephant's dream"),
                                 Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", tag: "UNDEFINED", title: "For bigger blazzes"),
-                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", tag: "UNDEFINED", title: "For bigger escapes")]
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", tag: "UNDEFINED", title: "For bigger escapes"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"),
+                                Video(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +56,8 @@ extension VideoLibraryViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 
-/*
+/*  Some video links for example
+ 
  [
              { "description" : "Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he prepares the nasty rodents a comical revenge.\n\nLicensed under the Creative Commons Attribution license\nhttp://www.bigbuckbunny.org",
                "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" ],

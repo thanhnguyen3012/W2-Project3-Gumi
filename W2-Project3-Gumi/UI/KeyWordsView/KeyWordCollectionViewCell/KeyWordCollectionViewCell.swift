@@ -15,7 +15,11 @@ class KeyWordCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius =  (self.frame.height / 2) - 5
-        self.contentView.backgroundColor = .systemGray5
+        self.toggleSelected()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     func toggleSelected() {

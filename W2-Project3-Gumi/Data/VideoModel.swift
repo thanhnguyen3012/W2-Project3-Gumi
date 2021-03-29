@@ -17,4 +17,8 @@ class Video {
         self.tag = tag
         self.title = title
     }
+    
+    init(url: String) {
+        self.url = URL(string: url)
+    }
 }
