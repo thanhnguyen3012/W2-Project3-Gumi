@@ -54,23 +54,6 @@ class KeyWordCollectionViewCell: UICollectionViewCell {
             } else {
                 tagLabel.text = String(text[text.startIndex..<text.index(before: right)]) + "\n" + String(text[right..<text.endIndex])
             }
-            
-            
-//            let listOfWord = text.split(separator: " ")
-//            var result = ""
-//            for i in 0..<listOfWord.count {
-//                if result.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .regular)]).width < (size.width / 2) {
-//                    result += "\(listOfWord[i]) "
-//                } else {
-//                    result += "\n"
-//                    for j in i..<listOfWord.count {
-//                        result += "\(listOfWord[j]) "
-//                    }
-//                    break
-//                }
-//            }
-//            print(result)
-//            tagLabel.text = result
         }
     }
 
