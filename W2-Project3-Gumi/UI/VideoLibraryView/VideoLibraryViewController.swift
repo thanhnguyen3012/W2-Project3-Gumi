@@ -9,6 +9,13 @@ import UIKit
 
 class VideoLibraryViewController: UIViewController {
     
+    
+    enum Tag: Int {
+        case aaaa = 0
+        case bbbb
+        case cccc
+    }
+    
     //Outlet
     @IBOutlet weak var videoTableView: UITableView!
     
@@ -33,8 +40,9 @@ class VideoLibraryViewController: UIViewController {
         setupView()
     }
     
+    
     func setupView() {
-        title = "NEW VIDEOS"
+        self.title = "NEW VIDEOS"
         
         videoTableView.register(VideoTableViewCell.nib, forCellReuseIdentifier: VideoTableViewCell.identifier)
         videoTableView.delegate = self
